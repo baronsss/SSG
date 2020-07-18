@@ -1,5 +1,5 @@
 '''
-@author: baronsss
+@author: Alessio Barone <info.alessiobarone@gmail.com>
 '''
 import sys
 import os
