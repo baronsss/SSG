@@ -39,6 +39,9 @@ $ git clone https://github.com/baronsss/SSG
     $ python3 main.py
     ```
 
+## Screenshots
+![Main Page](docs/images/home.png)
+
 License
 ----
 

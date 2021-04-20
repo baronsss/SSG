@@ -180,9 +180,19 @@ class App(QWidget):
         with open('settings.ini', 'w') as config_file:
             config.write(config_file)
         
-        self.threadclass = ThreadClass(self.lista)
-        self.threadclass.start()
-        self.threadclass.text.connect(self.updatetext)
+        if '' not in [aet, aecName, aecHost, aecPort, percorso]:
+            self.threadclass = ThreadClass(self.lista)
+            self.threadclass.start()
+            self.threadclass.text.connect(self.updatetext)
+        else:
+            self.errorDialog = QDialog()
+            text = QLabel("Completa tutti i campi richiesti", self.errorDialog)
+            text.move(50,50)
+            self.errorDialog.setWindowTitle("Attenzione")
+            self.errorDialog.setWindowModality(Qt.ApplicationModal)
+            self.errorDialog.setGeometry(700, 500, 350, 150)
+            self.errorDialog.show()
+
     
     def stop(self):
         self.threadclass.terminate()
